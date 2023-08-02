@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  min-width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
+
+  @media (max-width: 92rem) {
+    padding: 0 1.6rem;
+  }
 `
 
 export const ContentContainer = styled.div`

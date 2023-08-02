@@ -1,6 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
+import firaCode from '../assets/fonts/FiraCode-Regular.woff'
 
 export const GlobalStyle = createGlobalStyle`
+    @font-face {
+        font-family: 'FiraCode';
+        src: url(${firaCode}) format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+
     :root {
         --blue: #3294f8;
 
@@ -54,5 +62,23 @@ export const GlobalStyle = createGlobalStyle`
     button {
         border: none;
         cursor: pointer;
+    }
+
+    // scroll bar
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--blue);
+
+        &:hover {
+            background: #3a536b;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgb(18, 18, 20);
     }
 `

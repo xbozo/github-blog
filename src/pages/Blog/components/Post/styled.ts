@@ -24,6 +24,7 @@ export const PostInfo = styled.div`
 
   .post-title {
     flex: 1;
+    padding-right: 2.4rem;
     color: var(--base-title);
     font-size: 1.9rem;
     font-family: 'Nunito', sans-serif;
@@ -32,7 +33,6 @@ export const PostInfo = styled.div`
   }
 
   .post-date {
-    width: 25%;
     color: var(--base-span);
     font-size: 1.4rem;
     font-family: 'Nunito', sans-serif;

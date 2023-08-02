@@ -36,21 +36,22 @@ export function Post() {
   }, [fetchPostDetails])
 
   return (
-    <C.Container>
+    <>
       <Header />
-
-      <C.ContentContainer>
-        {isLoading ? (
-          <div className="loading-container">
-            <LoadingSpinner />
-          </div>
-        ) : (
-          <>
-            <PostHeader postData={postData} />
-            <PostContent />
-          </>
-        )}
-      </C.ContentContainer>
-    </C.Container>
+      <C.Container>
+        <C.ContentContainer>
+          {isLoading ? (
+            <div className="loading-container">
+              <LoadingSpinner />
+            </div>
+          ) : (
+            <>
+              <PostHeader postData={postData} />
+              <PostContent content={postData.body} />
+            </>
+          )}
+        </C.ContentContainer>
+      </C.Container>
+    </>
   )
 }

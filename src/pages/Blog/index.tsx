@@ -49,31 +49,32 @@ export function Blog() {
   }, [fetchPosts])
 
   return (
-    <C.Container>
+    <>
       <Header />
+      <C.Container>
+        <C.ContentContainer>
+          <Profile />
+          <SearchInput postsLength={posts.length} fetchPosts={fetchPosts} />
 
-      <C.ContentContainer>
-        <Profile />
-        <SearchInput postsLength={posts.length} fetchPosts={fetchPosts} />
-
-        {isLoading ? (
-          <div className="loading-icon-container">
-            <LoadingSpinner />
-          </div>
-        ) : (
-          <C.PostsContainer>
-            {posts.length >= 1 &&
-              posts.map((post) => <Post key={post.number} post={post} />)}
-            {posts.length <= 0 && (
-              <C.NotFoundContainer>
-                <span className="result-notfound">
-                  Nenhum resultado encontrado
-                </span>
-              </C.NotFoundContainer>
-            )}
-          </C.PostsContainer>
-        )}
-      </C.ContentContainer>
-    </C.Container>
+          {isLoading ? (
+            <div className="loading-icon-container">
+              <LoadingSpinner />
+            </div>
+          ) : (
+            <C.PostsContainer>
+              {posts.length >= 1 &&
+                posts.map((post) => <Post key={post.number} post={post} />)}
+              {posts.length <= 0 && (
+                <C.NotFoundContainer>
+                  <span className="result-notfound">
+                    Nenhum resultado encontrado
+                  </span>
+                </C.NotFoundContainer>
+              )}
+            </C.PostsContainer>
+          )}
+        </C.ContentContainer>
+      </C.Container>
+    </>
   )
 }
