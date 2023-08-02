@@ -23,11 +23,21 @@ export const PostContent = styled.div`
   h2,
   h3 {
     color: var(--blue);
+    font-weight: 700;
   }
 
   ul {
     list-style: inherit;
     padding-left: 2rem;
+  }
+
+  a {
+    color: var(--blue);
+    transition: 0.2s;
+
+    &:hover {
+      color: var(--base-title);
+    }
   }
 
   pre {

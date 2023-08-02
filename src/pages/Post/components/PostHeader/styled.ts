@@ -36,6 +36,7 @@ export const PostContent = styled.div`
       font-size: 1.2rem;
       font-weight: 700;
       text-transform: uppercase;
+      border-bottom: 1px solid transparent;
 
       &:hover {
         border-bottom: 1px solid var(--blue);
