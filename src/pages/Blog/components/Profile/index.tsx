@@ -10,6 +10,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LoadingSpinner } from '../../../../components/LoadingSpinner'
+import { api } from '../../../../libs/axios'
 
 interface ProfileDataType {
   login: string
@@ -21,6 +22,8 @@ interface ProfileDataType {
   followers: number
 }
 
+const username = 'xbozo'
+
 export function Profile() {
   const [profileData, setProfileData] = useState<ProfileDataType>(
     {} as ProfileDataType,
@@ -31,21 +34,19 @@ export function Profile() {
   async function fetchProfile() {
     setIsLoading(true)
 
-    const response = await axios.get('https://api.github.com/users/xbozo', {
-      params: {
-        ID: 12345,
-      },
-    })
-
-    setProfileData(response.data)
+    await axios
+    api
+      .get(`/users/${username}`)
+      .then((response) => {
+        setProfileData(response.data)
+      })
+      .catch((error) => console.log(error))
 
     setTimeout(() => {
       //  delay intencional pra ver as alterações do loading
       setIsLoading(false)
     }, 1000)
   }
-
-  console.log(profileData)
 
   useEffect(() => {
     fetchProfile()

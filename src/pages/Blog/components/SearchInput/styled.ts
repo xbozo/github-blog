@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.main`
+export const SearchInputContainer = styled.div`
   margin-top: 8rem;
 
   .search-intro {

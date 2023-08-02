@@ -9,21 +9,17 @@ export const ContentContainer = styled.div`
   max-width: 90rem;
   margin: auto;
 
-  .loading-icon-container {
+  .loading-container {
     display: flex;
     justify-content: center;
-    margin-top: 4rem;
+
+    margin-top: -6rem;
+    padding: 3.2rem 4rem;
+    background: var(--base-profile);
+    border-radius: 10px;
   }
 `
 
-export const PostsContainer = styled.main`
-  max-width: 90rem;
-  gap: 3.2rem;
-  margin-top: 6rem;
-  display: flex;
-  flex-wrap: wrap;
-`
+export const PostsContainer = styled.main``
 
-export const NotFoundContainer = styled.div`
-  margin: auto;
-`
+export const NotFoundContainer = styled.div``

@@ -1,28 +1,22 @@
 import styled from 'styled-components'
 
-export const Profile = styled.div`
+export const PostContainer = styled.div`
   margin-top: -6rem;
   padding: 3.2rem 4rem;
   background: var(--base-profile);
   border-radius: 10px;
   display: flex;
   justify-content: center;
-
-  .profile-avatar {
-    width: 15rem;
-    height: 15rem;
-    border-radius: 8px;
-  }
 `
 
-export const ProfileContent = styled.div`
+export const PostContent = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: 2.4rem;
   margin-left: 2.4rem;
 
-  .profile-name {
+  .post-name {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,14 +43,7 @@ export const ProfileContent = styled.div`
     }
   }
 
-  .profile-desc {
-    color: var(--base-text);
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-  }
-
-  .profile-info {
+  .post-info {
     display: inline-flex;
     align-items: center;
     gap: 2.4rem;
@@ -69,7 +56,7 @@ export const ProfileContent = styled.div`
       font-weight: 400;
       gap: 0.8rem;
       transition: color 0.2s;
-      color: var(--base-subtitle);
+      color: var(--base-span);
 
       &:hover {
         color: var(--base-title);

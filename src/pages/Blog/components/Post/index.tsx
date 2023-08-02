@@ -1,21 +1,22 @@
+import { IPost } from '../..'
+import { relativeDateFormatter } from '../../../../utils/formatter'
 import * as C from './styled'
 
-export function Post() {
+interface PostProps {
+  post: IPost
+}
+
+export function Post({ post }: PostProps) {
+  const formattedDate = relativeDateFormatter(post.created_at)
+
   return (
-    <C.Container>
+    <C.Container to={`/post/${post.number}`}>
       <C.PostInfo>
-        <h3 className="post-title">
-          JavaScript data types and data structures
-        </h3>
-        <span className="post-date">Há 1 dia</span>
+        <h3 className="post-title">{post.title}</h3>
+        <span className="post-date">{formattedDate}</span>
       </C.PostInfo>
 
-      <C.PostDesc>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ut
-        nobis! Doloribus repellat veniam, neque, numquam dolorem maxime itaque
-        suscipit molestiae maiores quasi a est quis. Consectetur id quaerat
-        quia!
-      </C.PostDesc>
+      <C.PostDesc>{post.body}</C.PostDesc>
     </C.Container>
   )
 }
