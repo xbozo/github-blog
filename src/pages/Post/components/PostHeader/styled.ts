@@ -14,7 +14,6 @@ export const PostContent = styled.div`
   flex-direction: column;
   flex: 1;
   gap: 2.4rem;
-  margin-left: 2.4rem;
 
   .post-name {
     display: flex;
