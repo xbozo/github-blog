@@ -38,9 +38,12 @@ export function Blog() {
     } catch (error) {
       console.log(error)
     } finally {
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 1000)
+      setIsLoading(false)
+
+      // delay intencional pra visualizar o loading
+      // setTimeout(() => {
+      //   setIsLoading(false)
+      // }, 1000)
     }
   }, [])
 
