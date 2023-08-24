@@ -1,1 +1,1 @@
-# GitHub Blog
+# GitHub Blog - Challenge do curso Ignite
